@@ -73,7 +73,7 @@ class microprofiler{
 		$sized = round($size / pow(1024, ($i = floor(log(abs($size), 1024)))), $round);
 		$top = count($units) - 1;
 		if($i > $top){
-			$sized = pow($sized, $i - $top);
+			$sized = pow($sized, $i - $top);  //This line is incorrect.  It needs re-consideration on logic.  This was just something for me to throw in real quick.  PS: It's 2011.  If you've got a file that is over 1024 YiB, you should be more famous than Google.  This means that this line should never be parsed until AT LEAST the year [insert year that YiB has ben reached here].
 			$i = $top;
 		}
 		return $sized . $units[$i];
